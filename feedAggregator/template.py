@@ -5,6 +5,8 @@ import chevron
 # load section file
 parts = part_parse.file(open("sections.part.html"))
 
+NO_UPDATED_FEEDS_TEXT = "No feed updates!"
+
 
 class SectionItem:
     url: str
@@ -42,6 +44,9 @@ class Section:
 
             table_items_string += chevron.render(parts["tablePart"], variables) + "\n"
 
+        if table_items_string == "":
+            return ""
+
         return chevron.render(
             parts["section"], {"sectionTitle": self.title, "tableItems": table_items_string}
         )
@@ -58,11 +63,14 @@ class DigestEmail:
         self.bottom_text = bottom_text
 
     def __str__(self) -> str:
+
+        combi = list(filter(lambda x: x != "", [str(x) for x in self.sections]))
+
         return chevron.render(
             parts["email"],
             {
                 "mailTitle": self.title,
-                "mailContent": parts["sectionJoin"].join([""] + [str(x) for x in self.sections]),
+                "mailContent": parts["sectionJoin"].join([""] + (combi if len(combi) != 0 else [NO_UPDATED_FEEDS_TEXT])),
                 "bottomText": self.bottom_text
             },
         )
