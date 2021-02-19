@@ -64,13 +64,14 @@ class DigestEmail:
 
     def __str__(self) -> str:
 
-        combi = list(filter(lambda x: x != "", [str(x) for x in self.sections]))
+        sects = sorted(self.sections, key=lambda x: x.title)
+        combi = list(filter(lambda x: x != "", [str(x) for x in sects]))
 
         return chevron.render(
             parts["email"],
             {
                 "mailTitle": self.title,
-                "mailContent": parts["sectionJoin"].join([""] + (combi if len(combi) != 0 else [NO_UPDATED_FEEDS_TEXT])),
+                "mailContent": parts["sectionJoin"].join([""] + (combi if len(combi) != 0 else [NO_UPDATED_FEEDS_TEXT])),  # [""] adds an extra line at the top of the email
                 "bottomText": self.bottom_text
             },
         )
