@@ -1,0 +1,70 @@
+[[package]]
+name = "chevron"
+version = "0.14.0"
+description = "Mustache templating language renderer"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "css-inline"
+version = "0.6.2"
+description = "Fast CSS inlining written in Rust"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[[package]]
+name = "feedparser"
+version = "6.0.2"
+description = "Universal feed parser, handles RSS 0.9x, RSS 1.0, RSS 2.0, CDF, Atom 0.3, and Atom 1.0 feeds"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+sgmllib3k = "*"
+
+[[package]]
+name = "sgmllib3k"
+version = "1.0.0"
+description = "Py3k port of sgmllib."
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.8"
+content-hash = "f68bdc330bd85b21ad9d0a70b8f3676b36f0172a7406efe2d77e1754aa7e031c"
+
+[metadata.files]
+chevron = [
+    {file = "chevron-0.14.0-py3-none-any.whl", hash = "sha256:fbf996a709f8da2e745ef763f482ce2d311aa817d287593a5b990d6d6e4f0443"},
+    {file = "chevron-0.14.0.tar.gz", hash = "sha256:87613aafdf6d77b6a90ff073165a61ae5086e21ad49057aa0e53681601800ebf"},
+]
+css-inline = [
+    {file = "css_inline-0.6.2-cp35-cp35m-macosx_10_15_x86_64.whl", hash = "sha256:7ca35ef95c57f13b257e3192584c119a591fc8cc4c1514f135325ff89e7e9bee"},
+    {file = "css_inline-0.6.2-cp35-cp35m-manylinux2014_x86_64.whl", hash = "sha256:151b844ea2e15e76518363c07247cc18c2a92eab61a92b240215e23e331cd952"},
+    {file = "css_inline-0.6.2-cp35-cp35m-win_amd64.whl", hash = "sha256:66988a30be940f49cac7f1e11edb6a85a9daf43277966fce6fa85b7b74ae2a35"},
+    {file = "css_inline-0.6.2-cp36-cp36m-macosx_10_15_x86_64.whl", hash = "sha256:78140e4e3565a09c6f30269abe6a6eb50deddadd273c02d722eaf4184c38500b"},
+    {file = "css_inline-0.6.2-cp36-cp36m-manylinux2014_x86_64.whl", hash = "sha256:cbe2557533e5e02c2720ba4c71e7b3f58d12db2385ee305bdeb3aeb7681284f4"},
+    {file = "css_inline-0.6.2-cp36-cp36m-win_amd64.whl", hash = "sha256:eeacfdc774744de93ea2a8f064ff9a8aa0ba725d5f252cc1360263b09998ce13"},
+    {file = "css_inline-0.6.2-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:018f626fd05d38c37f54dbdc183ae1a88e9f2d208100e80e0a3b4a3bc98bada9"},
+    {file = "css_inline-0.6.2-cp37-cp37m-manylinux2014_x86_64.whl", hash = "sha256:3b9388410eb082f4179a0a6bf5077d28148690756869e7b14e63f8c2262446f3"},
+    {file = "css_inline-0.6.2-cp37-cp37m-win_amd64.whl", hash = "sha256:905eb34337f1976fa41d0825c8450db9ce2611320c7ce058086c3269487c08eb"},
+    {file = "css_inline-0.6.2-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:77ff2c60367ecba6d4d524116cafb702a39979a4f3314e795167c2443f708c97"},
+    {file = "css_inline-0.6.2-cp38-cp38-manylinux2014_x86_64.whl", hash = "sha256:d37a28d8208ce5e71066c889d129aef74232ba955bded2d02ee51a9217b8ff43"},
+    {file = "css_inline-0.6.2-cp38-cp38-win_amd64.whl", hash = "sha256:8f07fe8c31a3c36619ae979dc96a9634639a8699d7d3e4ebd72eeb5e00cfe7c4"},
+    {file = "css_inline-0.6.2-cp39-cp39-macosx_10_15_x86_64.whl", hash = "sha256:19f857781719fb3c0425184d28c9fd7e7838bb6d36bd2935f2ae95d6644621d5"},
+    {file = "css_inline-0.6.2-cp39-cp39-manylinux2014_x86_64.whl", hash = "sha256:5277dce5134809679e185f29708fc8989fa8162eebbd923bbc787ab368b04d01"},
+    {file = "css_inline-0.6.2-cp39-cp39-win_amd64.whl", hash = "sha256:781b7948e38a1fd5417953213ac1242cb46cfa706ec997a4d99fcaef60d01a5e"},
+    {file = "css_inline-0.6.2.tar.gz", hash = "sha256:50c847015f5aebaf5a423cf2f0767a2735731b44fc0e8ff7534b20c879163ecb"},
+]
+feedparser = [
+    {file = "feedparser-6.0.2-py3-none-any.whl", hash = "sha256:f596c4b34fb3e2dc7e6ac3a8191603841e8d5d267210064e94d4238737452ddd"},
+    {file = "feedparser-6.0.2.tar.gz", hash = "sha256:1b00a105425f492f3954fd346e5b524ca9cef3a4bbf95b8809470e9857aa1074"},
+]
+sgmllib3k = [
+    {file = "sgmllib3k-1.0.0.tar.gz", hash = "sha256:7868fb1c8bfa764c1ac563d3cf369c381d1325d36124933a726f29fcdaa812e9"},
+]

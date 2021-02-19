@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "feedAggregator"
+name = "rss"
 version = "0.0.0"
 description = ""
 authors = ["Tom <tom@tdpain.net>"]
@@ -7,6 +7,9 @@ license = "ISC"
 
 [tool.poetry.dependencies]
 python = "^3.8"
+feedparser = "^6.0.2"
+css-inline = "^0.6.2"
+chevron = "^0.14.0"
 
 [tool.poetry.dev-dependencies]
 
