@@ -1,9 +1,10 @@
 from typing import List
-import part_parse
+from feedAggregator import part_parse
 import chevron
+import os
 
 # load section file
-parts = part_parse.file(open("sections.part.html"))
+parts = part_parse.file(open(os.path.join(os.path.dirname(__file__), "sections.part.html")))
 
 NO_UPDATED_FEEDS_TEXT = "No feed updates!"
 
