@@ -1,7 +1,8 @@
 from typing import List
-from feedAggregator import part_parse
 import chevron
 import os
+
+import part_parse
 
 # load section file
 parts = part_parse.file(open(os.path.join(os.path.dirname(__file__), "sections.part.html")))
