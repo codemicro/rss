@@ -15,7 +15,7 @@ import html2text
 
 import template
 
-__VERSION__ = "v0.0.1"
+__VERSION__ = "0.0.1"
 
 # load/create config
 
