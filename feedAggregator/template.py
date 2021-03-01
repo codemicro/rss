@@ -22,6 +22,7 @@ class SectionItem:
 
     def vars(self):
         x = vars(self)
+        # this is solely so I could have idiomatic naming schemes in both the template and python places
         x["urlText"] = x["url_text"]
         del x["url_text"]
         return x
