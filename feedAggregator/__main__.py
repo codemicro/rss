@@ -19,7 +19,7 @@ __VERSION__ = "v0.0.1"
 
 # load/create config
 
-user_home_dir = os.path.expanduser('~')
+user_home_dir = os.path.expanduser("~")
 config_file_location = os.path.join(user_home_dir, ".config", "feedAggregator.json")
 
 configuration = {}
@@ -103,10 +103,10 @@ def generate_email(email_address: str):
 
     def feed_entry_filter_func(rss_entry: feedparser.util.FeedParserDict) -> bool:
         return [
-                   rss_entry.published_parsed.day,
-                   rss_entry.published_parsed.month,
-                   rss_entry.published_parsed.year,
-               ] == yesterday
+            rss_entry.published_parsed.day,
+            rss_entry.published_parsed.month,
+            rss_entry.published_parsed.year,
+        ] == yesterday
 
     sections = []
     warnings = []
@@ -117,20 +117,27 @@ def generate_email(email_address: str):
         d = feedparser.parse(feed["url"])
 
         if not d.status == 200:
-            warnings.append(f"feed \"{feed['name']}\" returned a non-200 status code - {d.status}")
+            warnings.append(
+                f"feed \"{feed['name']}\" returned a non-200 status code - {d.status}"
+            )
             continue
 
         for entry in d.entries:
             entry.published_parsed = datetime.datetime(*(entry.published_parsed[0:6]))
 
-        new = list(filter(feed_entry_filter_func, sorted(d.entries, key=lambda x: x.published_parsed, reverse=True)))
+        new = list(
+            filter(
+                feed_entry_filter_func,
+                sorted(d.entries, key=lambda x: x.published_parsed, reverse=True),
+            )
+        )
 
         items = []
         for x in new:
             dt = x.published_parsed.strftime("%d%b%y %H:%M")
             items.append(template.SectionItem(x.link, x.title, dt))
 
-        section = template.Section(feed['name'], items)
+        section = template.Section(feed["name"], items)
 
         sections.append(section)
 
@@ -164,14 +171,16 @@ def generate_email(email_address: str):
     mail.quit()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import fire
 
-    fire.Fire({
-        "run": generate_email,
-        "add": add,
-        "show": show,
-        "remove": remove,
-        "info": info,
-        "setup": set_info,
-    })
+    fire.Fire(
+        {
+            "run": generate_email,
+            "add": add,
+            "show": show,
+            "remove": remove,
+            "info": info,
+            "setup": set_info,
+        }
+    )

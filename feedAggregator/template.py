@@ -5,7 +5,9 @@ import os
 import part_parse
 
 # load section file
-parts = part_parse.file(open(os.path.join(os.path.dirname(__file__), "sections.part.html")))
+parts = part_parse.file(
+    open(os.path.join(os.path.dirname(__file__), "sections.part.html"))
+)
 
 NO_UPDATED_FEEDS_TEXT = "No feed updates!"
 
@@ -51,7 +53,8 @@ class Section:
             return ""
 
         return chevron.render(
-            parts["section"], {"sectionTitle": self.title, "tableItems": table_items_string}
+            parts["section"],
+            {"sectionTitle": self.title, "tableItems": table_items_string},
         )
 
 
@@ -74,7 +77,9 @@ class DigestEmail:
             parts["email"],
             {
                 "mailTitle": self.title,
-                "mailContent": parts["sectionJoin"].join([""] + (combi if len(combi) != 0 else [NO_UPDATED_FEEDS_TEXT])),  # [""] adds an extra line at the top of the email
-                "bottomText": self.bottom_text
+                "mailContent": parts["sectionJoin"].join(
+                    [""] + (combi if len(combi) != 0 else [NO_UPDATED_FEEDS_TEXT])
+                ),  # [""] adds an extra line at the top of the email
+                "bottomText": self.bottom_text,
             },
         )
