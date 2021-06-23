@@ -15,7 +15,7 @@ import html2text
 
 import template
 
-__VERSION__ = "0.0.1"
+__VERSION__ = "0.0.2"
 
 # load/create config
 
@@ -123,7 +123,15 @@ def generate_email(email_address: str):
             continue
 
         for entry in d.entries:
-            entry.published_parsed = datetime.datetime(*(entry.published_parsed[0:6]))
+            # updated_parsed and published_parsed are time tuples, this will convert them into datetime objects
+
+            x = None
+            if "published_parsed" not in entry:
+                x = entry.updated_parsed
+            else:
+                x = entry.published_parsed
+
+            entry.published_parsed = datetime.datetime(*(x[0:6]))
 
         new = list(
             filter(
