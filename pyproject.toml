@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rss"
-version = "0.0.2"
+version = "0.1.0"
 description = "Simple and easy to modify tool to generate email digests for a select set of RSS feeds"
 authors = ["Tom <tom@tdpain.net>"]
 license = "MIT"

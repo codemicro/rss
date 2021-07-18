@@ -23,6 +23,8 @@ poetry install
 poetry run python ./feedAggregator setup # follow prompts
 poetry run python ./feedAggregator add [feed name] [feed URL] # add your first feed!
 poetry run python ./feedAggregator run [recipient email address] # send the first digest
+
+poetry run python ./feedAggregator --help # complete list of commands
 ```
 
 This script is best suited to being run with `cron`.
