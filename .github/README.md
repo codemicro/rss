@@ -8,6 +8,8 @@
 
 This is a small collection of Python scripts that generate RSS email digests from a predefined set of feeds. When run, they will collect all RSS entries that were published the previous day, compiles them into an email and sends that to a given address.
 
+![Sample email](sample.png)
+
 ### Installation
 
 Prerequisites:
