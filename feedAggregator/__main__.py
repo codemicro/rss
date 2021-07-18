@@ -3,6 +3,8 @@ import json
 import os
 import sys
 import time
+import io
+import xml.etree.cElementTree as ET
 
 import smtplib
 
@@ -179,6 +181,24 @@ def generate_email(email_address: str):
     mail.quit()
 
 
+def export():
+    """
+    Exports feeds in OPML format to stdout
+    """
+    
+    root = ET.Element("opml", version="2.0")
+    body = ET.SubElement(root, "body")
+
+    for _, r in enumerate(feeds):
+        ET.SubElement(body, "outline", text=r["name"], type="rss", xmlUrl=r["url"])
+
+    o = io.BytesIO()
+    ET.ElementTree(root).write(o)
+
+    sys.stdout.write(o.getvalue().decode() + "\n")
+    sys.stdout.flush()
+    
+
 if __name__ == "__main__":
     import fire
 
@@ -189,6 +209,8 @@ if __name__ == "__main__":
             "show": show,
             "remove": remove,
             "info": info,
+            "version": info,
             "setup": set_info,
+            "export": export,
         }
     )
