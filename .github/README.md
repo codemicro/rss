@@ -19,6 +19,8 @@ Prerequisites:
 
 ```bash
 git clone https://www.github.com/codemicro/rss.git feedAggregator
+cd feedAggregator
+git checkout 0.1.0
 poetry install
 poetry run python ./feedAggregator setup # follow prompts
 poetry run python ./feedAggregator add [feed name] [feed URL] # add your first feed!
