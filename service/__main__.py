@@ -118,6 +118,12 @@ def generate_email(email_address: str):
 
         d = feedparser.parse(feed["url"])
 
+        if d.bozo:
+            warnings.append(
+                f"feed \"{feed['name']}\" failed to parse (bozo bit set) - {d.bozo_exception}"
+            )
+            continue
+
         if not d.status == 200:
             warnings.append(
                 f"feed \"{feed['name']}\" returned a non-200 status code - {d.status}"
