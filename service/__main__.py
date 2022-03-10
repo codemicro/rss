@@ -17,7 +17,7 @@ import html2text
 
 import template
 
-__VERSION__ = "0.0.2"
+__VERSION__ = "0.1.1"
 
 # load/create config
 
@@ -160,7 +160,7 @@ def generate_email(email_address: str):
 
     total_time = time.time() - start_time
 
-    bottom_text = f"Generated in {total_time} seconds"
+    bottom_text = f"Generated in {round(total_time, 2)} seconds by FeedAggregator v{__VERSION__}"
     if len(warnings) != 0:
         xrz = "<br><b>Warning:</b> "
         bottom_text += xrz + (xrz.join(warnings))
