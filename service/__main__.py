@@ -118,9 +118,10 @@ def generate_email(email_address: str):
 
         d = feedparser.parse(feed["url"])
 
-        if d.bozo:
+        # https://pythonhosted.org/feedparser/character-encoding.html#handling-incorrectly-declared-encodings
+        if d.bozo and type(d.bozo_exception) != feedparser.CharacterEncodingOverride:
             warnings.append(
-                f"feed \"{feed['name']}\" failed to parse (bozo bit set) - {d.bozo_exception}"
+                f"feed \"{feed['name']}\" bozo bit set - {d.bozo_exception}"
             )
             continue
 
