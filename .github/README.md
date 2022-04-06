@@ -26,13 +26,13 @@ Prerequisites:
 ```bash
 git clone https://www.github.com/codemicro/rss.git feedAggregator
 cd feedAggregator
-git checkout 0.1.0
+git checkout 0.1.1
 poetry install
-poetry run python ./feedAggregator setup # follow prompts
-poetry run python ./feedAggregator add [feed name] [feed URL] # add your first feed!
-poetry run python ./feedAggregator run [recipient email address] # send the first digest
+poetry run python ./service setup # follow prompts
+poetry run python ./service add [feed name] [feed URL] # add your first feed!
+poetry run python ./service run [recipient email address] # send the first digest
 
-poetry run python ./feedAggregator --help # complete list of commands
+poetry run python ./service --help # complete list of commands
 ```
 
 This script is best suited to being run with `cron`.
